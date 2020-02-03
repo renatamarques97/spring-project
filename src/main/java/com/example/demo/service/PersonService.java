@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import com.example.demo.dao.PersonDAO;
 import com.example.demo.model.Person;
+import java.util.List;
 
 @Service
 public class PersonService {
@@ -17,5 +18,9 @@ public class PersonService {
 	
 	public int addPerson(Person person) {
 		return personDAO.addPerson(person);
+	}
+	
+	public List<Person> getAllPeople() {
+		return personDAO.selectAllPeople();
 	}
 }
